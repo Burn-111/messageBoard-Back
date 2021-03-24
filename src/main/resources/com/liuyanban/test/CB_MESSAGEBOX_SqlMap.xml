@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><!--Converted at: Tue Sep 17 16:34:24 CST 2019-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuyanban.test.liuyan.dao.MessageBoxIbatisDao">
+
+    <insert id="saveLiuYan" parameterType="Liuyan">
+       INSERT INTO
+         liuyan
+         (
+         uptime,
+         content
+         )
+          values
+          (
+           now(),
+          #{content}
+           )
+    </insert>
+    <select id="displayLiuyan" parameterType="Liuyan" resultType="com.liuyanban.test.liuyan.bean.Liuyan">
+        select * from liuyan
+    </select>
+</mapper>
